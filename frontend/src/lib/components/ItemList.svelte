@@ -119,12 +119,13 @@
 </div>
 
 <ul data-sveltekit-preload-data="hover" class="mt-4">
-	{#each data.items.data as item}
+	{#each data.items.data as item, i}
 		<li class="group rounded-md">
 			<Button
 				href={'/items?id=' + item.id}
 				class="flex justify-between items-center gap-2 py-6"
 				variant="ghost"
+				data-meow={i}
 			>
 				<h2 class="truncate text-lg font-medium">
 					{item.title}

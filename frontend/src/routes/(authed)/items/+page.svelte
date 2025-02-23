@@ -12,6 +12,8 @@
 
 	let { data }: Props = $props();
 
+	console.log(data);
+
 	function sanitize(content: string, baseLink: string) {
 		function joinURL(s: string | null) {
 			if (!s) return '';

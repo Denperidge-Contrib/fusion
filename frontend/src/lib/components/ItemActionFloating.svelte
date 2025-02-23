@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Item } from '$lib/api/model';
-	import { ArrowUpIcon } from 'lucide-svelte';
+	import { ArrowUpIcon, ArrowLeftIcon, ArrowRightIcon } from 'lucide-svelte';
 	import ItemActionBase from './ItemActionBase.svelte';
 	import ItemActionBookmark from './ItemActionBookmark.svelte';
 	import ItemActionUnread from './ItemActionUnread.svelte';
@@ -18,6 +18,14 @@
 		e.preventDefault();
 		document.body.scrollIntoView({ behavior: 'smooth' });
 	}
+
+	function previousItem(e: Event) {
+		
+	}
+
+	function nextItem(e: Event) {
+		console.log(e);
+	}
 </script>
 
 <div class="{fixed ? 'fixed' : ''} bottom-2 left-0 right-0">
@@ -31,5 +39,9 @@
 		<ItemActionVisitLink {data} />
 		<Separator orientation="vertical" class="h-5" />
 		<ItemActionBase fn={handleScrollTop} tooltip="Back to Top" icon={ArrowUpIcon} />
+		<Separator orientation="vertical" class="h-5" />
+		<ItemActionBase fn={previousItem} tooltip="Previous item" icon={ArrowLeftIcon} />
+		<ItemActionBase fn={nextItem} tooltip="Next item" icon={ArrowRightIcon} />
+	
 	</div>
 </div>

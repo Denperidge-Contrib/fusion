@@ -9,6 +9,8 @@
 	type Props = WithoutChild<PaginationPrimitive.PageProps> &
 		ButtonProps & {
 			isActive?: boolean;
+			nextPage?: any;
+			previousPage?: any;
 		};
 
 	let {
@@ -17,6 +19,8 @@
 		size = "icon",
 		isActive = false,
 		page,
+		nextPage = null,
+		previousPage = null,
 		children,
 		...restProps
 	}: Props = $props();
